@@ -4,9 +4,7 @@ sudo /opt/cprocsp/sbin/amd64/cpconfig -license -view
 
 Подпись сертификатом
 sudo /opt/cprocsp/bin/amd64/cryptcp -signf -nochain -attached  -dn <пользователь>  sign.txt -pin 512365q!
-sudo /opt/cprocsp/bin/amd64/cryptcp -signf -nochain -attached  -thumbprint 56b2bf50d2f38fafdd90a565654f342bdad49850  sign.txt -pin K.,k.Ujhj[z!
 
-/opt/cprocsp/bin/cryptcp -signf -thumbprint ECC8487E8DEE504CC4455EA35E029136E9700ABF -der -cert -detached /Users/renatakhmyarov/test_sign/test.txt
 /opt/cprocsp/bin/cryptcp -signf -thumbprint ECC8487E8DEE504CC4455EA35E029136E9700ABF -der -cert -attached /Users/renatakhmyarov/test_sign/test.txt
 
 /opt/cprocsp/bin/cryptcp -signf -nochain -attached -cert -thumbprint ECC8487E8DEE504CC4455EA35E029136E9700ABF -dir /Users/renatakhmyarov/test_sign /Users/renatakhmyarov/test_sign/test.txt
@@ -16,37 +14,4 @@ sudo /opt/cprocsp/bin/amd64/cryptcp -signf -nochain -attached  -thumbprint 56b2b
  /opt/cprocsp/bin/amd64/csptest -keyset -enum_cont -fqcn -verifyc
 
 Утилита работы с сертификатами
- /opt/cprocsp/bin/amd64/certmgr
-
-
- Container name
-РЭЙНБОУ HDIMAGE\\FNSrSBER.003\82B1 56b2bf50d2f38fafdd90a565654f342bdad49850
-НИКА HDIMAGE\\FNSrSBER.002\6931 ecc8487e8dee504cc4455ea35e029136e9700abf
-ЮДИН ВЛАДИМИР ПАВЛОВИЧ HDIMAGE\\FNSrSBER.001\1E74 902be81febb1558576b7f66cd0feb69cb604b74b
-Смирнова Оксана Николаевна HDIMAGE\\FNSrSBER.000\F842 c923739f2dbae2f41c1d5b6ef490b6dc5177bf19
-РЛ ГРУПП HDIMAGE\\f38eb67d.000\D20A 14e1d6512b825b9bc2a21e5433a7ae72529d71c4
-
-
-/opt/cprocsp/bin/amd64/certmgr -list -thumbprint e3894a1bf9453fb1f157ce31a255a9d67cb0075b
-
-
-
-tar xf powershell-7.4.4-linux-arm64.tar
-
-sudo tar zxf /tmp/powershell-7.4.4-linux-arm64.tar.gz -C /opt/microsoft/powershell/7
-
-sudo tar zxf /tmp/powershell-7.4.4-linux-arm64.tar -C /opt/microsoft/powershell/7
-
-tar xf powershell-7.4.4-linux-arm64.tar -C /opt/microsoft/powershell/7
-
-
-# Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.4.4/powershell-7.4.4-linux-x64.tar.gz
-# Create the target folder where powershell will be placed
-sudo mkdir -p /opt/microsoft/powershell/7
-# Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /opt/microsoft/powershell/7
-# Set execute permissions
-sudo chmod +x /opt/microsoft/powershell/7/pwsh
-# Create the symbolic link that points to pwsh
-sudo ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh
+/opt/cprocsp/bin/amd64/certmgr
