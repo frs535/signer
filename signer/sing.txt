@@ -1,13 +1,13 @@
-sudo /opt/cprocsp/sbin/amd64/cpconfig -license -set 50503-60000-01ZFH-FWFGY-766PZ
+
 sudo /opt/cprocsp/sbin/amd64/cpconfig -license -view
 
 
 Подпись сертификатом
-sudo /opt/cprocsp/bin/amd64/cryptcp -signf -nochain -attached  -dn <пользователь>  sign.txt -pin 512365q!
+sudo /opt/cprocsp/bin/amd64/cryptcp -signf -nochain -attached  -dn <пользователь>  sign.txt -pin зцв
 
-/opt/cprocsp/bin/cryptcp -signf -thumbprint ECC8487E8DEE504CC4455EA35E029136E9700ABF -der -cert -attached /Users/renatakhmyarov/test_sign/test.txt
+/opt/cprocsp/bin/cryptcp -signf -thumbprint <thumbprint> -der -cert -attached /Users/renatakhmyarov/test_sign/test.txt
 
-/opt/cprocsp/bin/cryptcp -signf -nochain -attached -cert -thumbprint ECC8487E8DEE504CC4455EA35E029136E9700ABF -dir /Users/renatakhmyarov/test_sign /Users/renatakhmyarov/test_sign/test.txt
+/opt/cprocsp/bin/cryptcp -signf -nochain -attached -cert -thumbprint <thumbprint> -dir /Users/username/test_sign /Users/username/test_sign/test.txt
 
 
 Проверка сертификатов
