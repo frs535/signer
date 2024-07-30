@@ -73,11 +73,18 @@ internal static class Program
         
         content = JsonSerializer.Serialize(result);
         request = new HttpRequestMessage(HttpMethod.Post, signs.HttpServer1C);
-        request.Content = new StringContent(content, Encoding.UTF8, "application/json");
         
-        Console.WriteLine(content);
+        var svcCredentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(signs.User + ":" + signs.Password));
 
-        //response = await client.SendAsync(request);
+        request.Headers.Add("Authorization", "Basic " + svcCredentials);
+
+        request.Content = new StringContent(content, Encoding.UTF8, "application/json");
+
+        response = await client.SendAsync(request);
+        if (!response.IsSuccessStatusCode)
+            Console.WriteLine(await response.Content.ReadAsStringAsync());
+        else
+            Console.WriteLine("Successful");
         
         client.Dispose();
     }
