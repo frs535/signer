@@ -36,8 +36,8 @@ internal static class Program
             await File.WriteAllTextAsync(tempFile, info.Data);
               
             var arguments = string.IsNullOrEmpty(sign.Password)?
-                $"-signf -attached -cadesbes -cert -thumbprint {sign.Thumbprint} -dir {signs.WorkingDirectory} {tempFile}"
-                : $"-signf -attached -cadesbes -cert -thumbprint {sign.Thumbprint} -dir {signs.WorkingDirectory} {tempFile} -pin {sign.Password}";
+                $"-signf -nochain -attached -cadesbes -cert -thumbprint {sign.Thumbprint} -dir {signs.WorkingDirectory} {tempFile}"
+                : $"-signf -nochain -attached -cadesbes -cert -thumbprint {sign.Thumbprint} -dir {signs.WorkingDirectory} {tempFile} -pin {sign.Password}";
             
             var proc =Process.Start(signs.CryptcpPath, arguments);
             await proc.WaitForExitAsync();
